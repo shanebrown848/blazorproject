@@ -1,0 +1,21 @@
+@using Microsoft.AspNetCore.Components
+
+<div class="event-card">
+    <h3>@EventTitle</h3>
+    <input @bind="EventDescription" placeholder="Enter event description" class="form-control" />
+</div>
+
+@code {
+    [Parameter]
+    public string EventTitle { get; set; }
+
+    // Two-way data binding for the event description.
+    private string _eventDescription;
+    public string EventDescription {
+        get => _eventDescription;
+        set {
+            _eventDescription = value;
+            // Additional logic if needed when the description changes.
+        }
+    }
+}

@@ -1,0 +1,15 @@
+@page "/"
+<h1>Welcome to EventEase</h1>
+<button @onclick="LoadEvents">Load Events</button>
+
+@if (isEventsLoaded)
+{
+    <EventListComponent />
+}
+
+@code {
+    private bool isEventsLoaded = false;
+    private void LoadEvents() {
+        isEventsLoaded = true;
+    }
+}

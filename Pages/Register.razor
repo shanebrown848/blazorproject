@@ -1,0 +1,27 @@
+@page "/register"
+@using System.ComponentModel.DataAnnotations
+@inject NavigationManager NavManager
+
+<EditForm Model="@registration" OnValidSubmit="HandleRegistration">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-group">
+        <label>Email:</label>
+        <InputText @bind-Value="registration.Email" class="form-control" placeholder="Email" />
+    </div>
+    <div class="form-group">
+        <label>Password:</label>
+        <InputText @bind-Value="registration.Password" class="form-control" type="password" placeholder="Password" />
+    </div>
+    <button type="submit" class="btn btn-primary">Register</button>
+</EditForm>
+
+@code {
+    private Registration registration = new();
+
+    private void HandleRegistration() {
+        // Implement registration logic (e.g., saving user data)
+        NavManager.NavigateTo("/");
+    }
+}

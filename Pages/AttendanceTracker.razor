@@ -1,0 +1,11 @@
+@page "/attendance"
+<h3>Attendance Tracker</h3>
+<p>Current Attendance: @attendanceCount</p>
+<button @onclick="MarkAttendance" class="btn btn-success">Attend</button>
+
+@code {
+    private int attendanceCount = 0;
+    private void MarkAttendance() {
+        attendanceCount++;
+    }
+}
